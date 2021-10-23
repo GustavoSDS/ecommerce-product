@@ -1,11 +1,22 @@
-@import url(https://fonts.google.com/specimen/Kumbh+Sans);
-.p {
+@import url("https://fonts.google.com/specimen/Roboto");
+p {
   font-size: 16px;
 }
 
 body {
-  font-size: "Kumbh Sans", serif;
-  font-weight: 400, 700;
+  max-width: 1400px;
+  background-color: white;
+  font-family: "Roboto", serif;
+  font-weight: 400;
+}
+
+ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+title {
+  font-weight: 700;
 }
 
 .attribution {
