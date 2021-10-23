@@ -1,7 +1,7 @@
 // Google Fonts
 @import url(https://fonts.google.com/specimen/Kumbh+Sans);
 // Font
-$fontFamily: 'Kumbh Sans', serif;
+$fontFamily: "Kumbh Sans", serif;
 // Typography
 $Weights: 400, 700;
 
@@ -27,4 +27,17 @@ $Black: hsla(0, 0%, 0%, 0.253); // (with 75% opacity for lightbox background)
 body {
     font-size: $fontFamily;
     font-weight: $Weights;
+}
+
+
+
+
+// <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }
