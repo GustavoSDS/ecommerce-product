@@ -1,29 +1,4 @@
-@import url("https://fonts.google.com/specimen/Roboto");
-p {
-  font-size: 16px;
-}
-
-body {
-  max-width: 1400px;
-  background-color: white;
-  font-family: "Roboto", serif;
-  font-weight: 400;
-}
-
-ul li {
-  list-style: none;
-  display: inline-block;
-}
-
-title {
-  font-weight: 700;
-}
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-
-.attribution a {
-  color: #3e52a3;
-}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "common.css";

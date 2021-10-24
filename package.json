@@ -1,0 +1,42 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "Proyecto de ecommerce",
+  "main": "tailwind.config.js",
+  "dependencies": {
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.17"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.3.1",
+    "@tailwindcss/typography": "^0.4.0",
+    "alpinejs": "^3.0.6",
+    "axios": "^0.21",
+    "laravel-mix": "^6.0.34",
+    "lodash": "^4.17.19",
+    "postcss": "^8.1.14",
+    "postcss-import": "^14.0.1",
+    "tailwindcss": "^2.2.2"
+  },
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoSDS/ecommerce-product.git"
+  },
+  "author": "Gustavo Dos Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GustavoSDS/ecommerce-product/issues"
+  },
+  "homepage": "https://github.com/GustavoSDS/ecommerce-product#readme",
+  "keywords": []
+}

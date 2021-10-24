@@ -1,0 +1,101 @@
+// Google Fonts
+// @import url('https://fonts.google.com/specimen/Roboto');
+
+// // Font
+// $fontFamily: "Roboto";
+// // Typography
+// $WeightFor: 400;
+// $WeightSeven: 700;
+
+// // Colors
+// //  Primary
+// $Orange: hsl(26, 100%, 55%);
+// $paleOrange: hsl(25, 100%, 94%);
+
+// // Neutral
+
+// $veryVarkBlue: hsl(220, 13%, 13%);
+// $darkGrayishBlue: hsl(219, 9%, 45%);
+// $grayishBlue: hsl(220, 14%, 75%);
+// $lightGrayishBlue: hsl(223, 64%, 98%);
+// $White: hsl(0, 0%, 100%);
+// $Black: hsla(0, 0%, 0%, 0.253); // (with 75% opacity for lightbox background)
+
+// // Font size (paragraph): 16px
+// p {
+//     font-size: 16px;
+// }
+
+// body {
+//     font-family: $fontFamily;
+//     font-weight: $WeightFor;
+//     background-color: $paleOrange;
+//     padding: 20px;
+// }
+
+// .container {
+//     margin: auto;
+//     max-width: 1400px;
+//     padding-left: 140px;
+//     padding-right: 140px;
+//     background-color: $White;
+//     box-shadow: 2px 2px 2px 2px rgba(182, 180, 180, 0.308);
+// }
+
+// ul li {
+//     list-style: none;
+//     display: inline-block;
+// }
+
+// ul {
+//     padding: 20px;
+//     padding-bottom: 40px;
+//     border-bottom: 1px outset $lightGrayishBlue;
+// }
+
+// header nav {
+//     margin: auto;
+//     align-items: center;
+// }
+
+// .nav-menu {
+//     margin: 10px;
+//     color: $grayishBlue;
+// }
+
+// .nav-menu a {
+//     text-decoration-line: none;
+// }
+
+// .menu-coll {
+//     margin-left: 50px;
+// }
+// .nav-img {
+//     float: right;
+// }
+// .img-avatar{
+//     margin-left: 50px;
+//     width: 45px;
+// }
+// .img-cart{
+//     margin-top: 60%;
+//     width: 20px;
+// }
+
+// title {
+//     font-weight: $WeightSeven;
+// }
+
+
+
+
+
+// // <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+// .attribution {
+//     font-size: 11px;
+//     text-align: center;
+// }
+
+// .attribution a {
+//     color: hsl(228, 45%, 44%);
+// }

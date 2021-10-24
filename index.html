@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -11,68 +11,144 @@
   <title>Frontend Mentor | E-commerce product page</title>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="./scss/app.css">
+
+  <!-- <link rel="stylesheet" href="./scss/app.css"> -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/js/app.js" defer></script>
+
 
 </head>
 
-<body>
+<body class="bg-fondo mx-auto">
+  <div class="bg-fondo mx-auto">
+    <div class="bg-white w-full mx-auto mt-28 mb-28 px-32 py-5 border shadow-sm">
 
-  <div class="container">
-
-    <header>
-      <!-- Logotipo -->
-      <div class="logo">
-        <img src="./images/logo.svg" alt="logo">
-      </div>
       <!-- Navigation -->
-      <nav>
-        <ul>
-          <li>Collections</li>
-          <li>Men</li>
-          <li>Women</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>
-            <img src="./images/icon-cart.svg" alt="icon-cart">
-          </li>
-          <li>
-            <img src="./images/image-avatar.png" width="35" alt="image-avatar">
-          </li>
-        </ul>
-      </nav>
-    </header>
+      <nav class="max-w-7xl mx-auto bg-white pt-4" x-data="{ open: false }"">
+        <div class=" mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="relative flex items-center justify-between h-16 border-b-2 border-gray-200 pb-10">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button x-on:click="open = true" type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
 
-    <main>
-      <!-- Section Product -->
-      <section>
-        <!-- <img src="/design/desktop-preview.jpg" width="1000" alt=""> -->
-      </section>
+              <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex-shrink-0 flex items-center mr-4">
+              <a href="#">
+                <img src="./images/logo.svg" width="125" alt="logo">
+              </a>
+            </div>
+            <div class="hidden sm:block sm:ml-6">
+              <div class="flex space-x-4">
+                <a href="#" class="text-color-gray px-3 py-6 rounded-md text-sm font-medium">Collections</a>
 
-      <!-- Section Details -->
-      <section>
+                <a href="#" class="text-color-gray px-3 py-6 rounded-md text-sm font-medium">Men</a>
 
-        <h1>Sneaker Company</h1>
+                <a href="#" class="text-color-gray px-3 py-6 rounded-md text-sm font-medium">Women</a>
 
-        <title>Fall Limited Edition Sneakers</title>
+                <a href="#" class="text-color-gray px-3 py-6 rounded-md text-sm font-medium">About</a>
+                <a href="#" class="text-color-gray px-3 py-6 rounded-md text-sm font-medium">Contact</a>
 
-        <p> These low-profile sneakers are your perfect casual wear companion. Featuring a
-          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center ml-4">
+            <div class="float-right">
+              <img class="w-5" src="./images/icon-cart.svg" alt="icon-cart">
+            </div>
+            <div class="float-right ml-8">
+              <img class="w-11" src="./images/image-avatar.png" alt="image-avatar">
+            </div>
+          </div>
+        </div>
+    </div>
 
-        <label>$125.00</label>
-        <label>50%</label>
-        <label>$250.00</label>
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div x-show="open" x-on:click.away="open = false" class="sm:hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+          aria-current="page">Collections</a>
 
-        <input type="number" value="0">
-        <button>Add to cart</button>
-      </section>
+        <a href="#"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Men</a>
+
+        <a href="#"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Women</a>
+
+        <a href="#"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+        <a href="#"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+      </div>
+    </div>
+    </nav>
+
+
+
+    <main class="my-10">
+      <div class="flex mx-10">
+        <div class="w-2/4 mr-20">
+          <!-- Section Product -->
+          <section>
+            <div>
+              <img src="/images/image-product-1.jpg" width="500" alt="">
+            </div>
+            <div class="flex float-left">
+              <img src="/images/image-product-1.jpg" width="50" alt="">
+              <img src="/images/image-product-2.jpg" width="50" alt="">
+              <img src="/images/image-product-3.jpg" width="50" alt="">
+              <img src="/images/image-product-4.jpg" width="50" alt="">
+            </div>
+          </section>
+        </div>
+        <div class="w-2/4">
+          <!-- Section Details -->
+          <section>
+
+            <h1>Sneaker Company</h1>
+
+            <title>Fall Limited Edition Sneakers</title>
+
+            <p> These low-profile sneakers are your perfect casual wear companion. Featuring a
+              durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+
+            <label>$125.00</label>
+            <label>50%</label>
+            <label>$250.00</label>
+
+            <input type="number" value="0">
+            <button>Add to cart</button>
+          </section>
+        </div>
+      </div>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="attribution" hidden>
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Gustavo S. Dos Santos</a>.
+      </div>
+    </footer>
+  </div>
   </div>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Gustavo S. Dos Santos</a>.
-  </div>
 </body>
 
 </html>
