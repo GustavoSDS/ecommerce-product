@@ -31893,6 +31893,10 @@ video {
   color: #AEAFB4;
 }
 
+.w-image{
+  width: 395px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
