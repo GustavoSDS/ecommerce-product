@@ -11,7 +11,6 @@
   <title>Frontend Mentor | E-commerce product page</title>
 
   <!-- Styles -->
-
   <!-- <link rel="stylesheet" href="./scss/app.css"> -->
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/app.css">
@@ -24,129 +23,152 @@
 
 </head>
 
-<body class="bg-fondo mx-auto">
-  <div class="bg-fondo mx-auto">
-    <div class="bg-white w-full mx-auto my-2 px-32 py-5 border shadow-sm">
+<body class="container bg-fondo mx-auto">
+  <div class="bg-white w-full mx-auto px-20 py-5 border shadow-sm">
 
-      <!-- Navigation -->
-      <nav class="max-w-7xl mx-auto bg-white pt-4" x-data="{ open: false }"">
+    <!-- Navigation -->
+    <nav class="max-w-7xl mx-auto bg-white pt-4" x-data="{ open: false }"">
         <div class=" mx-auto px-2 sm:px-6 lg:px-8">
-        <div class="relative flex items-center justify-between h-16 border-b-2 border-gray-200 pb-10">
-          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <!-- Mobile menu button-->
-            <button x-on:click="open = true" type="button"
-              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              aria-controls="mobile-menu" aria-expanded="false">
-              <span class="sr-only">Open main menu</span>
-              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+      <div class="relative flex items-center justify-between h-16 border-b-2 border-gray-200 pb-10">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <button x-on:click="open = true" type="button"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
 
-              <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex-shrink-0 flex items-center mr-4">
+            <a href="#">
+              <img src="./images/logo.svg" width="125" alt="logo">
+            </a>
+          </div>
+          <div class="hidden sm:block sm:ml-6">
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-500 px-3 py-6 rounded-md text-sm font-medium">Collections</a>
+
+              <a href="#" class="text-gray-500 px-3 py-6 rounded-md text-sm font-medium">Men</a>
+
+              <a href="#" class="text-gray-500 px-3 py-6 rounded-md text-sm font-medium">Women</a>
+
+              <a href="#" class="text-gray-500 px-3 py-6 rounded-md text-sm font-medium">About</a>
+              <a href="#" class="text-gray-500 px-3 py-6 rounded-md text-sm font-medium">Contact</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center ml-4">
+          <div class="float-right">
+            <img class="w-5" src="./images/icon-cart.svg" alt="icon-cart">
+          </div>
+          <div class="float-right ml-8">
+            <img class="w-12" src="./images/image-avatar.png" alt="image-avatar">
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div x-show="open" x-on:click.away="open = false" class="sm:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+        aria-current="page">Collections</a>
+
+      <a href="#"
+        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Men</a>
+
+      <a href="#"
+        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Women</a>
+
+      <a href="#"
+        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+      <a href="#"
+        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+    </div>
+  </div>
+  </nav>
+
+
+
+  <main class="mt-20">
+    <div class="flex mx-10">
+      <div class="w-2/4">
+        <!-- Section Product -->
+        <section>
+          <div>
+            <img class="ml-10 border rounded-xl w-image" src="/images/image-product-1.jpg" alt="Product">
+            <div class="mx-auto mt-7 ml-7 flex">
+              <img class="mx-3 w-20 rounded-lg" src="/images/image-product-1.jpg" alt="Product1">
+              <img class="mx-3 w-20 rounded-lg" src="/images/image-product-2.jpg" alt="Product2">
+              <img class="mx-3 w-20 rounded-lg" src="/images/image-product-3.jpg" alt="Product3">
+              <img class="mx-3 w-20 rounded-lg" src="/images/image-product-4.jpg" alt="Product4">
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Section Details -->
+      <div class="w-2/4 mt-16">
+        <section class="w-4/5">
+          <div>
+            <h1 class="text-color-orange text-sm font-bold uppercase">Sneaker Company</h1>
+
+            <h2 class="text-gray-800 mt-3 text-4x2 font-black mb-9">Fall Limited Edition Sneakers</h2>
+
+            <p class="text-sm font-medium text-gray-500"> These low-profile sneakers are your perfect casual wear
+              companion. Featuring a
+              durable rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+          </div>
+
+          <div class="mt-6">
+            <div class="flex">
+              <label class="text-black text-2xl font-black">$125.00</label>
+              <label class="ml-4 my-auto px-2 py-0.5 bg-orange rounded-sm text-sm font-extrabold">50%</label>
+            </div>
+            <label class="text-sm text-gray-400 font-bold line-through">$250.00</label>
+          </div>
+
+          <div class="flex mt-10">
+            <div class="flex mr-4 px-4 bg-gray-100 rounded-lg">
+              <span class="my-auto">
+                <button class="text-3xl font-bold orange" id="menos" type="button">-</button>
+              </span>
+              <input class="my-auto w-20 text-center font-bold bg-gray-100 " type="text" id="contador"  value="0"
+                min="1" />
+              <span class="my-auto">
+                <button class="text-2xl font-bold orange" id="mas" type="button">+</button>
+              </span>
+            </div>
+            <button class="w-3/5 flex btn-orange justify-center py-3 text-md font-bold rounded-md-lg">
+              <svg class="mr-4" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                  fill="#FCEFE5" />
               </svg>
+              Add to cart
             </button>
           </div>
-          <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-            <div class="flex-shrink-0 flex items-center mr-4">
-              <a href="#">
-                <img src="./images/logo.svg" width="125" alt="logo">
-              </a>
-            </div>
-            <div class="hidden sm:block sm:ml-6">
-              <div class="flex space-x-4">
-                <a href="#" class="text-color-gray px-3 py-6 rounded-md text-sm font-medium">Collections</a>
-
-                <a href="#" class="text-color-gray px-3 py-6 rounded-md text-sm font-medium">Men</a>
-
-                <a href="#" class="text-color-gray px-3 py-6 rounded-md text-sm font-medium">Women</a>
-
-                <a href="#" class="text-color-gray px-3 py-6 rounded-md text-sm font-medium">About</a>
-                <a href="#" class="text-color-gray px-3 py-6 rounded-md text-sm font-medium">Contact</a>
-
-              </div>
-            </div>
-          </div>
-          <div class="flex items-center ml-4">
-            <div class="float-right">
-              <img class="w-5" src="./images/icon-cart.svg" alt="icon-cart">
-            </div>
-            <div class="float-right ml-8">
-              <img class="w-11" src="./images/image-avatar.png" alt="image-avatar">
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <!-- Mobile menu, show/hide based on menu state. -->
-    <div x-show="open" x-on:click.away="open = false" class="sm:hidden" id="mobile-menu">
-      <div class="px-2 pt-2 pb-3 space-y-1">
-        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-          aria-current="page">Collections</a>
-
-        <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Men</a>
-
-        <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Women</a>
-
-        <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
-        <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+        </section>
       </div>
     </div>
-    </nav>
-
-
-
-    <main class="mt-20">
-      <div class="flex mx-10">
-        <div class="w-2/4">
-          <!-- Section Product -->
-          <section>
-            <div>
-              <img class="ml-10 border rounded-xl w-image" src="/images/image-product-1.jpg" alt="Product">
-              <div class="mx-auto mt-10 ml-7 flex">
-                <img class="mx-3 w-20 rounded-lg" src="/images/image-product-1.jpg" alt="Product1">
-                <img class="mx-3 w-20 rounded-lg" src="/images/image-product-2.jpg" alt="Product2">
-                <img class="mx-3 w-20 rounded-lg" src="/images/image-product-3.jpg" alt="Product3">
-                <img class="mx-3 w-20 rounded-lg" src="/images/image-product-4.jpg" alt="Product4">
-              </div>
-            </div>
-          </section>
-        </div>
-        <div class="w-2/4">
-          <!-- Section Details -->
-          <section>
-
-            <h1>Sneaker Company</h1>
-
-            <title>Fall Limited Edition Sneakers</title>
-
-            <p> These low-profile sneakers are your perfect casual wear companion. Featuring a
-              durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-
-            <label>$125.00</label>
-            <label>50%</label>
-            <label>$250.00</label>
-
-            <input type="number" value="0">
-            <button>Add to cart</button>
-          </section>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div class="attribution" hidden>
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="#">Gustavo S. Dos Santos</a>.
-      </div>
-    </footer>
-  </div>
+  </main>
+  <footer>
+    <div class="attribution" hidden>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Gustavo S. Dos Santos</a>.
+    </div>
+  </footer>
   </div>
 
 </body>
