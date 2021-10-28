@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <style type="text/css" media="screen">
+        #imagen {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+        }
+    </style>
+    <script>
+        function carrousel() {
+            // Variables
+            const IMAGENES = [
+                '/images/image-product-1.jpg',
+                '/images/image-product-2.jpg',
+                '/images/image-product-3.jpg',
+                '/images/image-product-4.jpg'
+            ];
+            const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
+            let posicionActual = 0;
+            let $botonRetroceder = document.querySelector('#retroceder');
+            let $botonAvanzar = document.querySelector('#avanzar');
+            let $imagen = document.querySelector('#imagen');
+            let $botonPlay = document.querySelector('#play');
+            let $botonStop = document.querySelector('#stop');
+            let intervalo;
+
+            // Funciones
+
+            /**
+             * Funcion que cambia la foto en la siguiente posicion
+             */
+            function pasarFoto() {
+                if (posicionActual >= IMAGENES.length - 1) {
+                    posicionActual = 0;
+                } else {
+                    posicionActual++;
+                }
+                renderizarImagen();
+            }
+
+            /**
+             * Funcion que cambia la foto en la anterior posicion
+             */
+            function retrocederFoto() {
+                if (posicionActual <= 0) {
+                    posicionActual = IMAGENES.length - 1;
+                } else {
+                    posicionActual--;
+                }
+                renderizarImagen();
+            }
+
+            /**
+             * Funcion que actualiza la imagen de imagen dependiendo de posicionActual
+             */
+            function renderizarImagen() {
+                $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual]})`;
+            }
+
+            /**
+             * Activa el autoplay de la imagen
+             */
+            function playIntervalo() {
+                intervalo = setInterval(pasarFoto, TIEMPO_INTERVALO_MILESIMAS_SEG);
+                // Desactivamos los botones de control
+                $botonAvanzar.setAttribute('disabled', true);
+                $botonRetroceder.setAttribute('disabled', true);
+                $botonPlay.setAttribute('disabled', true);
+                $botonStop.removeAttribute('disabled');
+
+            }
+
+            /**
+             * Para el autoplay de la imagen
+             */
+            function stopIntervalo() {
+                clearInterval(intervalo);
+                // Activamos los botones de control
+                $botonAvanzar.removeAttribute('disabled');
+                $botonRetroceder.removeAttribute('disabled');
+                $botonPlay.removeAttribute('disabled');
+                $botonStop.setAttribute('disabled', true);
+            }
+
+            // Eventos
+            $botonAvanzar.addEventListener('click', pasarFoto);
+            $botonRetroceder.addEventListener('click', retrocederFoto);
+            $botonPlay.addEventListener('click', playIntervalo);
+            $botonStop.addEventListener('click', stopIntervalo);
+            // Iniciar
+            return renderizarImagen();
+        }
+    </script>
+</head>
+
+<body>
+    <a href="#my-modal" onclick="carrousel()">OPEN</a>
+
+    <div class="controles">
+        <button id="play">Play</button>
+        <button id="stop" disabled>Stop</button>
+    </div>
+
+    <div id="my-modal" class="modal">
+        <div class="modal-box max-w-md h-4/6">
+            <div id="image-product-1" class="relative w-full carousel-item">
+                <div class="w-full h-full bg-cover" id="imagen"></div>
+            </div>
+        </div>
+        <div class="absolute flex justify-between transform -translate-y-1/2 -translate-x-0.5 left-1/3 right-1/3 top-1/2">
+            <button id="retroceder"
+                class="bg-white text-gray-800 hover:bg-white hover:text-gray-800 shadow-md border-yellow-600 hover:border-yellow-600 btn btn-circle">❮</button>
+            <button id="avanzar"
+                class="bg-white text-gray-800 hover:bg-white hover:text-gray-800 shadow-md border-yellow-600 hover:border-yellow-600 btn btn-circle">❯</button>
+        </div>
+    </div>
+</body>
+
+</html>
